@@ -5,6 +5,7 @@ export const headerFontSize = '33px';
 
 //Examples from previous code and a test for git
 //removed code from both to resolve conflict
+//Test commit
 
 export const gray1 = '#383737';
 export const gray2 = '#5c5a5a';
