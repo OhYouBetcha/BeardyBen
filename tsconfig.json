@@ -21,6 +21,6 @@
     "jsx": "react"
   },
   "include": [
-    "src"
+    "src", "src/react-app-env.d.ts", "system_fisrc/reportWebVitals.tsm_files/setupTests.ts"
   ]
 }
