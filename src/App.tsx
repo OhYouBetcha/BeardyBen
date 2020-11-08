@@ -2,15 +2,25 @@ import React from 'react';
 import Header from './Components/layout/Header';
 import SideMenu from './Components/layout/SideMenu';
 import Homepage from './Components/pages/homepage';
+import Settings from './Components/pages/settings';
+import pageNotFound from './Components/pages/pageNotFound';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 
 const App: React.FC = () => {
   debugger;
   return (
-    <div>
-      <Header />
-      <SideMenu />
-      <Homepage />
-    </div>
+    <BrowserRouter>
+      <div>
+        <Header />
+        <SideMenu />
+        <Switch>
+          <Redirect from="/home" to="/" />
+          <Route exact path="/" component={Homepage} />
+          <Route path="/settings" component={Settings} />
+          <Route component={pageNotFound} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 };
 
