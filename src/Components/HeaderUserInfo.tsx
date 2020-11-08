@@ -23,7 +23,6 @@ export const HeaderUserInfo = () => (
         <NotificationsIcon />
       </Badge>
     </span>
-
     <Button
       variant="outlined"
       size="large"
