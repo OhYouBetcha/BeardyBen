@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const headerFontSize = '33px';
 
 //Examples from previous code
-
+//test code just for master
 export const gray1 = '#383737';
 export const gray2 = '#5c5a5a';
 export const gray3 = '#857c81';
