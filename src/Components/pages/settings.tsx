@@ -24,7 +24,7 @@ export const Settings = () => (
           min-height: 800px;
         `}
       >
-        Settings
+        <h1>Settings</h1>
         <Switch onChange={() => alert('Toggle Changed')} />
       </Paper>
     </div>
