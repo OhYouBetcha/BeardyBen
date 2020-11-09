@@ -4,7 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import { css, jsx } from '@emotion/core';
 import Switch from '@material-ui/core/Switch';
 
-export const Homepage = () => (
+export const Employees = () => (
   <div
     css={css`
       height: 80%;
@@ -24,11 +24,11 @@ export const Homepage = () => (
           min-height: 800px;
         `}
       >
-        <h1>Home Page</h1>
+        <h1>Employees</h1>
         <Switch onChange={() => alert('Toggle Changed')} />
       </Paper>
     </div>
   </div>
 );
 
-export default Homepage;
+export default Employees;

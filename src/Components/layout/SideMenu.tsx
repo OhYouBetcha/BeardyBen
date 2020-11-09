@@ -42,6 +42,23 @@ export const SideMenu = () => (
             Home
           </ListItem>
         </Link>
+
+        {/* Employees List Item */}
+        <Link
+          to="/employees"
+          css={css`
+            text-decoration: none;
+            color: inherit;
+          `}
+        >
+          <ListItem button={true} divider={true}>
+            {' '}
+            <ListItemIcon>
+              <SettingsIcon fontSize="large" />
+            </ListItemIcon>
+            Employees
+          </ListItem>
+        </Link>
         {/* Settings List Item */}
         <Link
           to="/settings"
