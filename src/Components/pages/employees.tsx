@@ -1,10 +1,16 @@
 import React from 'react';
+import { FC } from 'react';
 import Paper from '@material-ui/core/Paper';
 /** @jsxImportSource @emotion/core */
 import { css, jsx } from '@emotion/core';
 import Switch from '@material-ui/core/Switch';
+import { EmployeeData } from '../data/EmployeeData';
 
-export const Employees = () => (
+interface Props {
+  data: EmployeeData[];
+}
+
+export const Employees: FC<Props> = ({ data = [] }) => (
   <div
     css={css`
       height: 80%;
@@ -26,6 +32,13 @@ export const Employees = () => (
       >
         <h1>Employees</h1>
         <Switch onChange={() => alert('Toggle Changed')} />
+        {/* SHOW EMPLOYEE DATA */}
+        <ul>
+          <li>Hello</li>
+          {data.map((employees) => (
+            <li key={employees.clockPin}>{employees.fName}</li>
+          ))}
+        </ul>
       </Paper>
     </div>
   </div>

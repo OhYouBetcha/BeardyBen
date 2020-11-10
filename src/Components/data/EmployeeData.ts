@@ -5,7 +5,7 @@ export interface EmployeeData {
   lName: string;
 }
 
-const employees: EmployeeData[] = [
+const EmployeeData: EmployeeData[] = [
   {
     employeeId: 1580,
     clockPin: 9130,
