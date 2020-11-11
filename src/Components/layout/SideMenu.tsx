@@ -77,6 +77,23 @@ export const SideMenu = () => (
           </ListItem>
         </Link>
 
+        {/* To Do App List Item */}
+        <Link
+          to="/todo"
+          css={css`
+            text-decoration: none;
+            color: inherit;
+          `}
+        >
+          <ListItem button={true} divider={true}>
+            {' '}
+            <ListItemIcon>
+              <SettingsIcon fontSize="large" />
+            </ListItemIcon>
+            To-Do App
+          </ListItem>
+        </Link>
+
         {/* Settings List Item */}
         <Link
           to="/settings"

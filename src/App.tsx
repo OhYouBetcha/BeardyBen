@@ -7,6 +7,7 @@ import PageNotFound from './Components/pages/pageNotFound';
 import Employees from './Components/pages/employees';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import CountApp from './Components/pages/countApp';
+import ToDoApp from './Components/pages/todoApp';
 
 const App: React.FC = () => {
   debugger;
@@ -24,6 +25,11 @@ const App: React.FC = () => {
             component={() => (
               <Employees employeeId={11111} fName="Hello" title="Employees" />
             )}
+          />
+          <Route
+            exact
+            path="/todo"
+            component={() => <ToDoApp title="To Do App" />}
           />
           <Route
             path="/settings"
