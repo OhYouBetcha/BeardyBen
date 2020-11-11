@@ -3,8 +3,14 @@ import Paper from '@material-ui/core/Paper';
 /** @jsxImportSource @emotion/core */
 import { css, jsx } from '@emotion/core';
 import Switch from '@material-ui/core/Switch';
+import { FC } from 'react';
+import { Title } from '@material-ui/icons';
 
-export const Homepage = () => (
+interface Props {
+  title: string;
+}
+
+export const Homepage: FC<Props> = ({ title }) => (
   <div
     css={css`
       height: 80%;
@@ -24,7 +30,7 @@ export const Homepage = () => (
           min-height: 800px;
         `}
       >
-        <h1>Home Page</h1>
+        <h1>{title}</h1>
         <Switch onChange={() => alert('Toggle Changed')} />
       </Paper>
     </div>

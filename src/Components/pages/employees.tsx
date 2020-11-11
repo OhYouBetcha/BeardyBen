@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FC } from 'react';
 import Paper from '@material-ui/core/Paper';
 /** @jsxImportSource @emotion/core */
 import { css, jsx } from '@emotion/core';
 import Switch from '@material-ui/core/Switch';
 import { EmployeeData } from '../data/EmployeeData';
+import pageNotFound from './pageNotFound';
 
-interface Props {
-  data: EmployeeData[];
+interface EmployeeProps {
+  title?: string;
+  employeeId?: number;
+  clockPin?: number;
+  fName?: string;
+  lName?: string;
 }
 
-export const Employees: FC<Props> = ({ data = [] }) => (
+export const Employees: FC<EmployeeProps> = ({
+  employeeId,
+  clockPin,
+  fName,
+  lName,
+  title,
+}) => (
   <div
     css={css`
       height: 80%;
@@ -30,18 +41,25 @@ export const Employees: FC<Props> = ({ data = [] }) => (
           min-height: 800px;
         `}
       >
-        <h1>Employees</h1>
+        <h1>{title}</h1>
         <Switch onChange={() => alert('Toggle Changed')} />
         {/* SHOW EMPLOYEE DATA */}
         <ul>
-          <li>Hello</li>
-          {data.map((employees) => (
-            <li key={employees.clockPin}>{employees.fName}</li>
-          ))}
+          <li>{employeeId}</li>
+          <li>{fName}</li>
+          <li>{clockPin}</li>
+          <li>{lName}</li>
         </ul>
       </Paper>
     </div>
   </div>
 );
+
+Employees.defaultProps = {
+  employeeId: 156,
+  fName: 'Donald', // This value is adopted when name prop is omitted.
+  lName: 'Duck',
+  clockPin: 111,
+};
 
 export default Employees;

@@ -3,9 +3,10 @@ import Header from './Components/layout/Header';
 import SideMenu from './Components/layout/SideMenu';
 import Homepage from './Components/pages/homepage';
 import Settings from './Components/pages/settings';
-import pageNotFound from './Components/pages/pageNotFound';
+import PageNotFound from './Components/pages/pageNotFound';
 import Employees from './Components/pages/employees';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import CountApp from './Components/pages/countApp';
 
 const App: React.FC = () => {
   debugger;
@@ -16,10 +17,23 @@ const App: React.FC = () => {
         <SideMenu />
         <Switch>
           <Redirect from="/home" to="/" />
-          <Route exact path="/" component={Homepage} />
-          <Route exact path="/employees" component={Employees} />
-          <Route path="/settings" component={Settings} />
-          <Route component={pageNotFound} />
+          <Route exact path="/" component={() => <Homepage title="Home" />} />
+          <Route
+            exact
+            path="/employees"
+            component={() => (
+              <Employees employeeId={11111} fName="Hello" title="Employees" />
+            )}
+          />
+          <Route
+            path="/settings"
+            component={() => <Settings title="Settings" />}
+          />
+          <Route
+            path="/count"
+            component={() => <CountApp title="Count App" />}
+          />
+          <Route component={() => <PageNotFound title="PAGE NOT FOUND" />} />
         </Switch>
       </div>
     </BrowserRouter>
