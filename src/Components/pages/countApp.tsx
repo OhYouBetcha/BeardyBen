@@ -12,9 +12,12 @@ interface Props {
 
 export const CountApp: FC<Props> = ({ title }) => {
   const [count, setCount] = useState(0);
+
   function functionTest() {
-    alert('helloworld');
+    alert('this is a function. Also, number will be rest now!');
+    setCount(0);
   }
+
   return (
     <div
       css={css`
@@ -102,7 +105,7 @@ export const CountApp: FC<Props> = ({ title }) => {
           >
             {' '}
             <Button variant="contained" color="primary" onClick={functionTest}>
-              Functiontest
+              Reset (and function test)
             </Button>
           </div>
 
