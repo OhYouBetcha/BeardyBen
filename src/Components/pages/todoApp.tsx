@@ -4,37 +4,22 @@ import Paper from '@material-ui/core/Paper';
 import { css, jsx } from '@emotion/core';
 import Switch from '@material-ui/core/Switch';
 import { FC, useState } from 'react';
+import TodoListItem from './TodoListItem';
 
 //interface
 interface Props {
   title: string;
 }
-interface todoState {
-  text: string;
-  isCompleted: boolean;
-}
 
-function Todo({ todos, index }) {
-  return <div className="todo">{todos.text}</div>;
-}
+//this basically says that this is a const var "todos" OF TYPE ARRAY
+//with the TYPE of "TODO" which is brought in from the TYPES file in types.d.ts
+const todos: Array<Todo> = [
+  { text: 'Walk the dog', complete: true },
+  { text: 'Write app', complete: false },
+];
 
 ///what is actually exported,this is the base function
 export const ToDoApp: FC<Props> = ({ title }) => {
-  const [todos, setTodos] = useState<todoState[]>([
-    {
-      text: 'Learn about react',
-      isCompleted: false,
-    },
-    {
-      text: 'Meet Friend for lunch',
-      isCompleted: false,
-    },
-    {
-      text: 'build really cool todo app',
-      isCompleted: false,
-    },
-  ]);
-
   return (
     <div
       css={css`
@@ -56,12 +41,10 @@ export const ToDoApp: FC<Props> = ({ title }) => {
           `}
         >
           <h1>{title}</h1>
-          <div className="app">
-            <div className="todo-list">
-              {todos.map((todos, index) => (
-                <Todo key={index} index={index} todo={todos.text} />
-              ))}
-            </div>
+
+          {/* TODO LIST START */}
+          <div>
+            <TodoListItem />
           </div>
         </Paper>
       </div>
