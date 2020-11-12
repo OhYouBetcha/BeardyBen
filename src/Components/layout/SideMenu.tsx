@@ -94,6 +94,23 @@ export const SideMenu = () => (
           </ListItem>
         </Link>
 
+        {/* Material UI FORm List Item */}
+        <Link
+          to="/forms"
+          css={css`
+            text-decoration: none;
+            color: inherit;
+          `}
+        >
+          <ListItem button={true} divider={true}>
+            {' '}
+            <ListItemIcon>
+              <SettingsIcon fontSize="large" />
+            </ListItemIcon>
+            Form Practice
+          </ListItem>
+        </Link>
+
         {/* Settings List Item */}
         <Link
           to="/settings"

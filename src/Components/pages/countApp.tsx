@@ -26,7 +26,7 @@ export const CountApp: FC<Props> = ({ title }) => {
         padding: 50px;
         max-width: 90%;
         min-width: 85%;
-        margin: 50px 2% auto 10%;
+        margin: 50px 2% auto 13%;
         position: fixed;
       `}
     >

@@ -8,6 +8,7 @@ import Employees from './Components/pages/employees';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import CountApp from './Components/pages/countApp';
 import ToDoApp from './Components/pages/todoApp';
+import MaterialUIForm from './Components/pages/materialUIForm';
 
 const App: React.FC = () => {
   debugger;
@@ -30,6 +31,13 @@ const App: React.FC = () => {
             exact
             path="/todo"
             component={() => <ToDoApp title="To Do App" />}
+          />
+          <Route
+            exact
+            path="/forms"
+            component={() => (
+              <MaterialUIForm title="Form Practice" onSubmit={() => {}} />
+            )}
           />
           <Route
             path="/settings"
